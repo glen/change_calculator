@@ -13,6 +13,7 @@ describe 'ReadJsonFile' do
     let(:sample_input) { JSON.pretty_generate({"denominations"=>[]}) }
 
     it 'generates a sample input json file' do
+      allow(Dir).to receive(:mkdir)
       file = double('file')
       expect(File).to receive(:open).with(filename, 'w').and_yield(file)
       expect(file).to receive(:puts).with(sample_input)

@@ -9,7 +9,7 @@ include FormattedOutput
 
 print_value(value: "#{'#'*25} Change Calculator #{'#'*25}", color: :black, background: :white)
 begin
-  if ChangeCalculator.valid_number?(ARGV[0])
+  if ChangeCalculator.valid_number?(ARGV[0] || 'incorrect')
     cc = ChangeCalculator.new(ARGV[0])
     print_label(label: "Denomiations", color: :blue, column_width: 20)
     print_value(value: "[#{cc.denominations.join(', ')}]", color: :yellow)
