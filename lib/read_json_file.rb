@@ -3,7 +3,6 @@ require 'json'
 module ReadJsonFile
   def generate_sample_input_file(path_to_file)
     sample_file = {"denominations"=>[]}
-    Dir.mkdir(File.join(App.root, 'data'))
     File.open(path_to_file, 'w') do |file|
       file.puts JSON.pretty_generate(sample_file)
     end
